@@ -1,0 +1,16 @@
+.rojo{
+    color: red;
+}
+
+.container{
+    background-color: rgb(120, 144, 197);
+    display: flex;
+    justify-content: space-between;
+}
+
+.categories{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
