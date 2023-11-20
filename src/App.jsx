@@ -1,14 +1,21 @@
 import NavBar from './components/Navbar/Navbar'
 import Button from './components/Button/Button'
+import ItemCount from './components/ItemCount/ItemCount'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 
 function App() {
   return (
     <>
       <NavBar />
-      <h1>Curso React Luccaroni</h1>
-      <Button label={"Celulares"} />
-      <Button />
-      <Button />
+      <ItemListContainer greeting={"Curso React Luccaroni"}/>
+      <Button text={"Celulares"} color={"red"} callback={() => console.log("click en celular")} />
+      <Button text={"Tablets"} color={"blue"} callback = {() => console.log("click en tablets")} />
+      <Button text={"Notebooks"} color={"green"} callback={() => console.log("click en notebooks")} />
+      {/* <Button label={"Un texto"} /> */}
+
+      <ItemCount initialValue={10} intervalo={10} />
+      <ItemCount initialValue={20} intervalo={20} />
+      
     </>
   )
 }
