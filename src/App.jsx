@@ -2,6 +2,7 @@ import NavBar from './components/Navbar/Navbar'
 import Button from './components/Button/Button'
 import ItemCount from './components/ItemCount/ItemCount'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import ButtonMultifuncion from './components/ButtonMultifuncion/ButtonMultifuncion'
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
       <ItemCount initialValue={10} intervalo={10} />
       <ItemCount initialValue={20} intervalo={20} />
       
+      <ButtonMultifuncion label={"Actividad1"} color={"green"} callback={() => alert("ACTIVIDAD 1")} />
+
     </>
   )
 }
