@@ -17,7 +17,7 @@ function App() {
       <ItemCount initialValue={10} intervalo={10} />
       <ItemCount initialValue={20} intervalo={20} />
       
-      <ButtonMultifuncion label={"Actividad1"} color={"green"} callback={() => alert("ACTIVIDAD 1")} />
+      <ButtonMultifuncion label={"Actividad1"} backgroundColor={"red"} callback={() => alert("ACTIVIDAD 1")} />
 
     </>
   )
