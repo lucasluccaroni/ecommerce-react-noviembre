@@ -3,9 +3,10 @@ import Button from './components/Button/Button'
 import ItemCount from './components/ItemCount/ItemCount'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ButtonMultifuncion from './components/ButtonMultifuncion/ButtonMultifuncion'
-import Layout from './components/Layout/Layout'
+import Layout from './components/Children/Children'
 import Count from './components/Ciclos/Ciclos'
 import { useState } from 'react'
+import ContadorDeVueltas from './components/ContadorDeVueltas/ContadorDeVueltas'
 
 function App() {
   const [show, setShow] = useState(false)
@@ -13,11 +14,11 @@ function App() {
   return (
     <>
       <NavBar />
-      <ItemListContainer greeting={"Curso React Luccaroni"}/>
+{/*       <ItemListContainer greeting={"Curso React Luccaroni"}/>
       <Button text={"Celulares"} color={"red"} callback={() => console.log("click en celular")} />
       <Button text={"Tablets"} color={"blue"} callback = {() => console.log("click en tablets")} />
       <Button text={"Notebooks"} color={"green"} callback={() => console.log("click en notebooks")} />
-      {/* <Button label={"Un texto"} /> */}
+
 
       <ItemCount initialValue={10} intervalo={10} />
       <ItemCount initialValue={20} intervalo={20} />
@@ -37,11 +38,12 @@ function App() {
 
       <Layout title="Titulo del Layout" color="pink" >
           <button>Children3</button>
-      </Layout>
+      </Layout> */}
 
+{/*       <button onClick={()=> setShow(show => !show)} >Mostrar/No mostrar </button>
+      {show ? <Count/> : <h1>Otro componente</h1>} */}
 
-      <button onClick={()=> setShow(show => !show)} >Mostrar/No mostrar </button>
-      {show ? <Count/> : <h1>Otro componente</h1>}
+      <ContadorDeVueltas />
     </>
   )
 }

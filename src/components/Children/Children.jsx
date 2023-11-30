@@ -1,7 +1,7 @@
-//CLASE 5 - COMPONENTES II
+//CLASE 5 - COMPONENTES II - Children
 
 const Layout = (props) =>{
-    console.log(props)
+    //console.log(props)
 
     return(
         <div>

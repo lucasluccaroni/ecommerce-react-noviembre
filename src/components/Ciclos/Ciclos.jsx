@@ -1,10 +1,23 @@
-//CLASE 5 - COMPONENTES II - Ciclos
+//CLASE 5 - COMPONENTES II - Ciclos y useEffect
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 
-const Count = () => {
+const Count = ({title = "My App"}) => {
     const [count, setCount] = useState(0)
+
+
+    useEffect(()=>{
+        console.log("effect")
+        document.title= `${title} Contador= ${count}`
+
+        return () =>{
+            console.log("limpieza")
+            document.title = "Vite + React"
+        } 
+    }, [count, title])
+
+    //console.log("Fuera de useEffect")
 
     const handleClick = () =>{
         setCount(prev => prev + 1)
