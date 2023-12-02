@@ -43,7 +43,8 @@ function App() {
 {/*       <button onClick={()=> setShow(show => !show)} >Mostrar/No mostrar </button>
       {show ? <Count/> : <h1>Otro componente</h1>} */}
 
-      <ContadorDeVueltas />
+      <button onClick={()=> setShow(show => !show)} >Mostrar / No mostrar </button>
+      {show ? <ContadorDeVueltas/> : <h1>Haga click en "Mostrar" para activar el contador</h1>}
     </>
   )
 }
