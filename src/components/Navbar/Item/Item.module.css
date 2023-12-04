@@ -1,0 +1,12 @@
+.container{
+    border: solid;
+    border-color: orange;
+    width: fit-content;
+    padding: 20px;
+    margin: 20px;
+    background-color: lightblue;
+}
+
+.imagen{
+    width: 100px;
+}

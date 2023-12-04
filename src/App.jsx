@@ -15,8 +15,8 @@ function App() {
   return (
     <>
       <NavBar />
-{/*       <ItemListContainer greeting={"Curso React Luccaroni"}/>
-      <Button text={"Celulares"} color={"red"} callback={() => console.log("click en celular")} />
+{      <ItemListContainer greeting={"Curso React Luccaroni"}/>}
+      {/* <Button text={"Celulares"} color={"red"} callback={() => console.log("click en celular")} />
       <Button text={"Tablets"} color={"blue"} callback = {() => console.log("click en tablets")} />
       <Button text={"Notebooks"} color={"green"} callback={() => console.log("click en notebooks")} />
 
@@ -47,8 +47,8 @@ function App() {
       {/* <button onClick={()=> setShow(show => !show)} >Mostrar / No mostrar </button>
       {show ? <ContadorDeVueltas/> : <h1>Haga click en "Mostrar" para activar el contador</h1>} */}
 
-      <button onClick={()=> setShow(show => !show)} >Mostrar / No mostrar </button>
-      {show ? <ContadorConBoton /> : <h1> Carrito </h1>}
+{/*       <button onClick={()=> setShow(show => !show)} >Mostrar / No mostrar </button>
+      {show ? <ContadorConBoton /> : <h1> Carrito </h1>} */}
     </>
   )
 }
