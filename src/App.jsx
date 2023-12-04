@@ -7,6 +7,7 @@ import Layout from './components/Children/Children'
 import Count from './components/Ciclos/Ciclos'
 import { useState } from 'react'
 import ContadorDeVueltas from './components/ContadorDeVueltas/ContadorDeVueltas'
+import ContadorConBoton from './components/ContadorConBoton/ContadorConBoton'
 
 function App() {
   const [show, setShow] = useState(false)
@@ -43,8 +44,11 @@ function App() {
 {/*       <button onClick={()=> setShow(show => !show)} >Mostrar/No mostrar </button>
       {show ? <Count/> : <h1>Otro componente</h1>} */}
 
+      {/* <button onClick={()=> setShow(show => !show)} >Mostrar / No mostrar </button>
+      {show ? <ContadorDeVueltas/> : <h1>Haga click en "Mostrar" para activar el contador</h1>} */}
+
       <button onClick={()=> setShow(show => !show)} >Mostrar / No mostrar </button>
-      {show ? <ContadorDeVueltas/> : <h1>Haga click en "Mostrar" para activar el contador</h1>}
+      {show ? <ContadorConBoton /> : <h1> Carrito </h1>}
     </>
   )
 }
