@@ -8,14 +8,15 @@ import Count from './components/Ciclos/Ciclos'
 import { useState } from 'react'
 import ContadorDeVueltas from './components/ContadorDeVueltas/ContadorDeVueltas'
 import ContadorConBoton from './components/ContadorConBoton/ContadorConBoton'
+import EventListener from './components/EventListener/EventListener'
 
 function App() {
   const [show, setShow] = useState(false)
   
   return (
     <>
-      <NavBar />
-{      <ItemListContainer greeting={"Curso React Luccaroni"}/>}
+      {/* <{NavBar />
+      <ItemListContainer greeting={"Curso React Luccaroni"}/>} */}
       {/* <Button text={"Celulares"} color={"red"} callback={() => console.log("click en celular")} />
       <Button text={"Tablets"} color={"blue"} callback = {() => console.log("click en tablets")} />
       <Button text={"Notebooks"} color={"green"} callback={() => console.log("click en notebooks")} />
@@ -49,6 +50,8 @@ function App() {
 
 {/*       <button onClick={()=> setShow(show => !show)} >Mostrar / No mostrar </button>
       {show ? <ContadorConBoton /> : <h1> Carrito </h1>} */}
+
+      <EventListener />
     </>
   )
 }
