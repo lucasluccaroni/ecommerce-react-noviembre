@@ -1,30 +1,62 @@
 //CLASE 6 - PROMESAS - MOCK - .MAP() - CARDS
 
 import { useEffect, useState } from "react"
-import { getProducts } from "../../ascyncMock"
+import { getProducts, getProductsByCategory } from "../../ascyncMock"
 import ItemList from "../ItemList/ItemList"
+import { useParams } from "react-router-dom"
 
 const ItemListContainer = ({greeting}) =>{
 
     const [products, setProducts] = useState([])
+    const {categoryId} = useParams()
+    const [loading, setLoading] = useState(true)
+
+
+
 
     useEffect(()=>{
-        getProducts()
-        .then((response)=>{
-            setProducts(response)
-        })
-    }, [])
-    console.log(products);
+        setLoading(true)
+        const ascyncFunction = categoryId ? getProductsByCategory : getProducts
 
-    // const productsComponents = products.map(product =>{
-    //     return(
-    //         <div className={estilos.container} key={product.id}>
-    //             <h2> {product.name} </h2>
-    //             <img src={product.img} style={{width: 150}} />
-    //             <h3> {product.price} </h3>
-    //         </div>
-    //     )
-    // })
+        ascyncFunction(categoryId)
+            .then((response)=>{
+            setProducts(response)
+            })
+            .catch(error =>{
+                console.log(error)
+            })
+            .finally(()=>{
+                setLoading(false)
+            })
+        // if(categoryId){
+        //     getProductsByCategory(categoryId)
+        //     .then((response)=>{
+        //         setProducts(response)
+        //     })
+        //     .catch(error =>{
+        //         console.log(error)
+        //     })
+        //     .finally(()=>{
+        //         setLoading(false)
+        //     })
+        // } else{
+        //     getProducts()
+        //     .then((response)=>{
+        //         setProducts(response)
+        //     })
+        //     .catch(error =>{
+        //         console.log(error)
+        //     })
+        //     .finally(()=>{
+        //         setLoading(false)
+        //     })
+        // }
+    }, [categoryId])
+
+
+    if(loading){
+        return <h1>Cargando...</h1>
+    }
 
     return(
         <div>

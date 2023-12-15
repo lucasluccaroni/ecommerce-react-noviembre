@@ -1,4 +1,4 @@
-import Item from "../Navbar/Item/Item"
+import Item from "../Item/Item"
 
 const ItemList = ({products}) =>{
     return(

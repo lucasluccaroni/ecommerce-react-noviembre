@@ -14,3 +14,11 @@
     justify-content: space-around;
     align-items: center;
 }
+
+.link{
+    background-color: white;
+    border: solid black;
+    padding: 4px;
+    text-decoration: none;
+    color: black;
+}
