@@ -67,7 +67,7 @@ function App() {
 {/*       <button onClick={()=> setShow(show => !show)} >Mostrar / No mostrar </button>
       {show ? <ContadorConBoton /> : <h1> Carrito </h1>} */}
 
-      {/* <EventListener /> */}
+      <EventListener />
     </>
   )
 }

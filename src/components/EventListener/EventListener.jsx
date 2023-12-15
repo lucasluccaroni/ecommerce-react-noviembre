@@ -1,26 +1,46 @@
 //- CLASE 10 - EVENTOS
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
+import estilos from "./EventListener.module.css"
+
 
 const EventListener = () =>{
+    const buttonRef = useRef()
+    //const [estilado, setEstilado] = useState(estilos.botonDefault) //! DUDA APUNTES CLASE 10
+    const [colorText, setColorText] = useState("red")
 
-    const ref = useRef()
-    console.log(ref)
-
-    ref.current = 
-    console.log(ref)
-
+    
     useEffect(()=>{
+        const button = buttonRef.current
 
-    }, [])
+        const handleClick = () =>{
+            console.log("hice click")
+        }
+
+        const handleScroll = () => {
+            //console.log("hice scroll")
+            //console.log(button.getBoundingClientRect());
+            const { y } = button.getBoundingClientRect()
+            
+            const color = y < 50 ? "black" : "red"
+            setColorText(color)
+        }
 
 
-    return(
-        <button>
-            Haz Click
-        </button>
+        window.addEventListener("scroll", handleScroll)
+        button.addEventListener("click", handleClick)
+
+        return () =>{
+            button.removeEventListener("click", handleClick)
+            window.removeEventListener("scroll", handleScroll)
+        }
+    },[])
+
+    return (
+        <div className={estilos.contenedor} >
+            <button ref={buttonRef} style={{color: colorText}} >Haz Click</button>
+        </div>
     )
-
 }
 
 

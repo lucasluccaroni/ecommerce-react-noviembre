@@ -1,0 +1,12 @@
+.contenedor{
+    height: 150vh;
+    padding: 20px;
+}
+
+.botonDefault{
+    color: red;
+}
+.botonChange{
+    background-color: lightcoral;
+    color: black;
+}
