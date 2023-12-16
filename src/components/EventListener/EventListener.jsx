@@ -17,7 +17,8 @@ const EventListener = () =>{
             console.log("hice click")
         }
 
-        const handleScroll = () => {
+        const handleScroll = (e) => {
+            //console.log(e)
             //console.log("hice scroll")
             //console.log(button.getBoundingClientRect());
             const { y } = button.getBoundingClientRect()
@@ -38,7 +39,7 @@ const EventListener = () =>{
 
     return (
         <div className={estilos.contenedor} >
-            <button ref={buttonRef} style={{color: colorText}} >Haz Click</button>
+            <button onClick={(e) => console.log(e)} ref={buttonRef} style={{color: colorText}} >Haz Click</button>
         </div>
     )
 }
