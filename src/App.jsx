@@ -11,6 +11,7 @@ import ContadorConBoton from './components/ContadorConBoton/ContadorConBoton'
 import EventListener from './components/EventListener/EventListener'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailcontainer'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import ContadorEj from './components/ContadorEj/ContadorEj'
 
 function App() {
   const [show, setShow] = useState(false)
@@ -68,6 +69,8 @@ function App() {
       {show ? <ContadorConBoton /> : <h1> Carrito </h1>} */}
 
       <EventListener />
+
+      <ContadorEj></ContadorEj>
     </>
   )
 }

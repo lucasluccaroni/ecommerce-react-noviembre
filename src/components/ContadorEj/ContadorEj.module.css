@@ -1,0 +1,81 @@
+.container{
+    background-color: aquamarine;
+    border: solid blueviolet;
+    width: 350px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.buttons{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.buttonPlus{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #008CBA;
+    color: white;
+}
+.buttonPlus:hover {
+    background-color: #4CAF50; /* Verde */
+}
+
+
+.buttonMinus{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #f44336; /* Rojo */
+    color: white;
+}
+.buttonMinus:hover {
+    background-color: #e60000; /* Rojo oscuro */
+}
+
+.buttonTotal{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #555555; /* Gris */
+    color: white;
+}
+.buttonTotal:hover {
+    background-color: #000000; /* Negro */
+}
+
+
+.buttonReset{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #e7e700; /* Amarillo */
+    color: black;
+}
+.buttonReset:hover {
+    background-color: #b3b300; /* Amarillo oscuro */
+}
