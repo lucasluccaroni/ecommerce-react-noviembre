@@ -5,34 +5,55 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ButtonMultifuncion from './components/ButtonMultifuncion/ButtonMultifuncion'
 import Layout from './components/Children/Children'
 import Count from './components/Ciclos/Ciclos'
-import { useState } from 'react'
+import { useState, createContext } from 'react'
 import ContadorDeVueltas from './components/ContadorDeVueltas/ContadorDeVueltas'
 import ContadorConBoton from './components/ContadorConBoton/ContadorConBoton'
 import EventListener from './components/EventListener/EventListener'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailcontainer'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import ContadorEj from './components/ContadorEj/ContadorEj'
+
+
+
+
+export const Context = createContext()
+
 
 function App() {
   const [show, setShow] = useState(false)
   const [view, setView] = useState("listado")
+  const [cart, setCart] = useState([])   // carrito (CartWidget) - clase 11 context
   
+
+  // //Funcion para agregar al carrito (clase11 - context)
+  // const addItem = (productToAdd) =>{
+  //   if(!isInCart(productToAdd.id)) {
+  //     setCart(prev => [...prev, productToAdd])
+  //   }
+  // }
+
+  // //Funcion para checkear si lo que agregamos al carrito ya esta ahi y se repite el producto (clase11 - context)
+  // const isInCart = (productId) =>{
+  //   return cart.some(prod => prod.id === productId)
+  // }
+ 
+
   return (
     <>
-
       <BrowserRouter>
-        <NavBar />
-        <div>
-          <Link to="/detail" > Detalle</Link>
-          <Link to="/"> Listado </Link>
-        </div>
-        <Routes>
-          <Route path='/' element={ <ItemListContainer greeting={"Curso React Luccaroni"}/>} />
-          <Route path='/category/:categoryId' element={ <ItemListContainer greeting={"Filtro categoria"}/>} />
-          <Route path='/detail/:productId' element={ <ItemDetailContainer/> } />
-          <Route path='*' element={ <h1>404 Not found.</h1> } />
-        </Routes>
-      </BrowserRouter>
+        <Context.Provider value={"Valor de prueba"}  >
+          <NavBar />
+          <div>
+            <Link to="/detail" > Detalle</Link>
+            <Link to="/"> Listado </Link>
+          </div>
+          <Routes>
+            <Route path='/' element={ <ItemListContainer greeting={"Curso React Luccaroni"}/>} />
+            <Route path='/category/:categoryId' element={ <ItemListContainer greeting={"Filtro categoria"}/>} />
+            <Route path='/detail/:productId' element={ <ItemDetailContainer /> } />
+            <Route path='*' element={ <h1>404 Not found.</h1> } />
+          </Routes>
+        </Context.Provider>
+        </BrowserRouter>
 
       {/* <Button text={"Celulares"} color={"red"} callback={() => console.log("click en celular")} />
       <Button text={"Tablets"} color={"blue"} callback = {() => console.log("click en tablets")} />
@@ -69,8 +90,6 @@ function App() {
       {show ? <ContadorConBoton /> : <h1> Carrito </h1>} */}
 
       <EventListener />
-
-      <ContadorEj></ContadorEj>
     </>
   )
 }
